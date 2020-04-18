@@ -14,11 +14,11 @@ namespace P4_lab6_wf
 {
     public partial class Form1 : Form
     {
-       // BindingList<Number> numbers = new BindingList<Number>(); //specialna lista posiadająca event
+       
         public Form1()
         {
             InitializeComponent();
-            //dataGridView1.DataSource = numbers; //datagrid viev czyta tylko property, wiec trzba utworzyc klase która opakuje stringa
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,13 +29,6 @@ namespace P4_lab6_wf
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            /*var dialog = (OpenFileDialog)sender; //rzutowanie object -> openFileDialog
-            var path = dialog.FileName;
-            var fileContent = File.ReadAllText(path);
-            foreach (var item in fileContent.Split(new[] { "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries))
-            {
-                numbers.Add(new Number() { Value = item });
-            };*/
 
             var dialog = (OpenFileDialog)sender; //rzutowanie object -> openFileDialog
             var path = dialog.FileName;
@@ -46,23 +39,6 @@ namespace P4_lab6_wf
             {
                 flowLayoutPanel1.Controls.Add(GenerateNumberTextBox(Convert.ToInt32(item)));
             }
-
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private TextBox GenerateNumberTextBox(int number)
@@ -81,11 +57,6 @@ namespace P4_lab6_wf
             
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -95,8 +66,6 @@ namespace P4_lab6_wf
                 flowLayoutPanel2.Controls.Add(GenerateNumberTextBox(randomNumber));
                 Application.DoEvents();
 
-
-            
         }
     }
 }
